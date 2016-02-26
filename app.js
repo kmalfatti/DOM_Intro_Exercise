@@ -9,35 +9,18 @@ function load() {
 }
 window.onload = load();
 
-var li = document.getElementsByTagName('li');
-function afterwords() {
+var li = document.querySelectorAll('li');
   for( var i=0; i<li.length; i++) {
   li[i].addEventListener('click', afterwords);
-  li[i].className = 'selected';
-}
+   }
+function afterwords() {
     var curSelected = document.querySelector(".selected");
     if (curSelected) {
-      curSelected.className.remove("selected");
+      curSelected.className = ("");
     }
-    this.className.add("selected");
-}
-document.addEventListener('click', afterwords);
+    this.className = "selected";
+  }
 
-
-
-//   if (li[i]) {
-//       li[i].className.remove('selected');
-//     this[i].className.add('selected');
-//   }
-// }
-
-
-
-// When the gray div is moused over, 
-// it's removed from the DOM.
-
-
-// document.querySelector('ghosting').addEventListener('mousover',function(){this.removed();});
 
 document.querySelector("#ghosting").addEventListener('mouseover', grey);
 
@@ -59,3 +42,4 @@ document.querySelector("#resize").addEventListener('mouseleave', reset);
   function reset() {
     this.style.width = '200px';
 }
+
